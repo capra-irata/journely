@@ -1,9 +1,7 @@
 # Journely
 #### Video Demo: <TODO>
 #### Description:
-**Journely** is a journal-lite application that seeks to track daily healthy
-habits in a quick, minimalistic fashion and provide the user with insights as to
-how their mood fluctuates with patterns of said habits.
+**Journely** is a journal-lite application for tracking your daily healthy habits in a quick, minimalistic fashion. View a history of your healthy lifestyle journey and get insights from the program as to how your mood might fluctuate with your habit patterns.
 
 #### Tasks:
 ##### HTML:
