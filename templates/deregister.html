@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Delete Account
+{% endblock %}
+
+{% block main %}
+  <h1>Delete Account</h1>
+  <h2>If you're sure you want to delete your account (and all your data), confirm permanent deletion by entering your password below.</h2>
+  <form action="/delete_account" method="post" onsubmit="return confirm(`ARE YOU SURE? There will be no way to recover your account.`)">
+    <!-- TODO: Set required attribute on fields after testing -->
+    <div><input id="password" name="password" placeholder="Password" type="password"></div>
+    <div><button type="submit">Permanently Delete My Account</button></div>
+  </form>
+{% endblock %}

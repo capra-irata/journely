@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <title>Journely: {% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/journal">Journal Entries</a>
+      <a href="/register">Register</a>
+      <a href="/delete_account">Delete Account</a>
+      <a href="/login">Login</a>
+      <a href="/logout">Logout</a>
+      {% if 'username' in session %}
+        <span>Logged in as: {{ session['username'] }}</span>
+      {% endif %}
+    </nav>
+
+    <main>
+      {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for message in messages %}
+              <h1>{{ message[1] }}</h1>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+      (c) Nicholas Ester 2023
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block main %}
+  <h1>Register</h1>
+  <form action="/register" method="post">
+    <!-- TODO: Set required attribute on fields after testing -->
+    <div><input autocomplete="off" autofocus id="username" name="username" placeholder="Username" type="text"></div>
+    <div><input id="password" name="password" placeholder="Password" type="password"></div>
+    <div><input id="confirmation" name="confirmation" placeholder="Confirm Password" type="password"></div>
+    <div><button type="submit">Register</button></div>
+  </form>
+{% endblock %}

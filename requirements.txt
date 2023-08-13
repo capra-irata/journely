@@ -1,0 +1,4 @@
+cs50
+Flask
+Flash-Session
+requests

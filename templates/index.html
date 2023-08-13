@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Today
+{% endblock %}
+
+{% block main %}
+  <h1>{{ date }}</h1>
+  <form action="/recorded" method="post">
+    <h3>Mood</h3>
+    <div>
+      <!-- Create journal forms based on global lists from app -->
+      {% for mood in moods %}
+        {% if mood == mood_checked %}
+          <!-- Check radio button by default if journal entry was already submitted today -->
+          <input checked id={{mood}} name="mood" type="radio" value={{mood}}>
+        {% else %}
+          <input id={{mood}} name="mood" type="radio" value={{mood}}>
+        {% endif %}
+
+        <label for={{mood}}>{{ mood.capitalize() }}</label>
+      {% endfor %}
+    </div>
+
+    <h3>Goals</h3>
+    <div>
+      <!-- goals is an iterator of tuples zipped from the GOALS and GOALS_TEXT global lists -->
+      {% for goal in goals %}
+        {% if goal[0] in goals_checked %}
+          <input checked id={{goal[0]}} name="goals" type="checkbox" value={{goal[0]}}>
+        {% else %}
+          <input id={{goal[0]}} name="goals" type="checkbox" value={{goal[0]}}>
+        {% endif %}
+
+        <label for={{goal[0]}}>{{ goal[1] }}</label>
+      {% endfor %}
+    </div>
+
+    <div>
+      <button type="submit">Record Entry</button>
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block main %}
+  <h1>Login</h1>
+  <form action="/login" method="post">
+    <!-- TODO: Set required attribute on fields after testing -->
+    <div><input autocomplete="off" autofocus id="username" name="username" placeholder="Username" type="text"></div>
+    <div><input id="password" name="password" placeholder="Password" type="password"></div>
+    <div><button type="submit">Log In</button></div>
+  </form>
+{% endblock %}
